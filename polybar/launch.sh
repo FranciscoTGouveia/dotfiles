@@ -5,5 +5,5 @@ killall -q polybar
 
 # Launch bar
 echo "---"
-polybar example
+polybar mybar
 echo "Bar launched..."
