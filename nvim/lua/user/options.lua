@@ -16,9 +16,9 @@ set.smartcase = true -- Automatically switch search to case-sensitive if the que
 
 -- Text Rendering Options
 set.linebreak = true -- Avoid wrapping a line in the middle of a word
-set.scrolloff = 1 -- The number of screen lines to keep aboce and below of the cursor
-set.sidescrolloff = 5 -- The number of columns to keep to the left and right of the cursor
-set.wrap = true -- Enable line wrapping
+set.scrolloff = 8 -- The number of screen lines to keep aboce and below of the cursor
+set.sidescrolloff = 8 -- The number of columns to keep to the left and right of the cursor
+set.wrap = false -- Enable line wrapping
 
 
 -- User Interface Options
@@ -27,9 +27,11 @@ set.ruler = true -- Always show cursor position
 set.wildmenu = true -- Display command line's tab completion options as a menu
 set.tabpagemax = 10 -- Maximum number of tab pages that can be opened from the command line 
 set.number = true -- Show the line numbers on the sidebar
-set.relativenumber = true -- Show line number on the current line and relative numbers on all other lines
+set.relativenumber = false -- Show line number on the current line and relative numbers on all other lines
 set.visualbell = true -- Flash the screen on errors
 set.mouse = 'a' -- Enable mouse scrolling (and possible resizing) for all modes 
+set.clipboard = "unnamedplus" -- Allows access to the system clipboard
+set.pumheight  = 10 -- Pop up menu's height
 
 
 -- Code Folding Options
@@ -37,8 +39,8 @@ set.foldmethod = 'indent' -- "Fold based on indentation levels
 
 
 -- Miscellaneous Options
-set.backspace= 'indent,eol,start' -- Allow backspacing ovre indentation linebreaks and insertion start
-set.backupdir= '~/.cache/nvim'	-- Directory to store backup files
+set.backspace = 'indent,eol,start' -- Allow backspacing ovre indentation linebreaks and insertion start
+set.backup = false -- Doesn't allow backup files to be created
 set.confirm = true -- Display a confirmation dialog when writing and quitting
 set.hidden = true -- Hide files in the background instead of closing them
 set.history = 1000 -- Set the undo limit to 1000
