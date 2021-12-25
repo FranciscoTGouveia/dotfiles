@@ -25,3 +25,12 @@ vim.g.mapleader = " "
 	-- Navigate buffers
 	keymap("n", "<S-l>", ":bnext<Enter>", options)
 	keymap("n", "<S-h>", ":bprevious<Enter>", options)
+
+
+-- Visual Mode
+	-- Stay in indent mode
+	keymap("v", "<", "<gv", options)
+	keymap("v", ">", ">gv", options)
+	-- Move text up and down
+	keymap("v", "<A-j>", ":m .+1<CR>==", options)
+	keymap("v", "<A-k>", ":m .-2<CR>==", options)
