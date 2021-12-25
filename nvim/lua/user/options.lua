@@ -5,7 +5,7 @@ set.autoindent = true -- New lines inherit the indentation of previous lines
 set.shiftwidth = 4 -- When shifting, indent using four spaces
 set.smarttab = true -- Insert tabstop number of spaces when the tab key is pressed
 set.tabstop = 4 -- Indent using four spaces
-
+set.smartindent = true --  Make indent smart in C-like programs
 
 -- Search Options
 set.hlsearch = true -- Enable search highlightning
@@ -44,3 +44,4 @@ set.backup = false -- Doesn't allow backup files to be created
 set.confirm = true -- Display a confirmation dialog when writing and quitting
 set.hidden = true -- Hide files in the background instead of closing them
 set.history = 1000 -- Set the undo limit to 1000
+set.timeoutlen = 100 -- Time to wait for a mapped sequence to complete
