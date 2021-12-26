@@ -35,7 +35,7 @@ set.pumheight  = 10 -- Pop up menu's height
 
 
 -- Code Folding Options
-set.foldmethod = 'indent' -- "Fold based on indentation levels
+set.foldmethod = 'manual' -- "Fold based on indentation levels
 
 
 -- Miscellaneous Options
