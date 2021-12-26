@@ -26,10 +26,10 @@ border-size = 3
 border-color = #00000000
 
 padding-left = 0
-padding-right = 2
+padding-right = 4
 
-module-margin-left = 1
-module-margin-right = 1
+module-margin-left = 0
+module-margin-right = 4
 
 font-0 = nerd-fonts-jetbrains-mono:pixelsize=1:antialias=false;2
 font-1 = unifont:fontformat=truetype:size=2:antialias=false;0
@@ -88,18 +88,18 @@ type = internal/bspwm
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
-label-focused-padding = 2
+label-focused-padding = 4
 
 label-occupied = %index%
-label-occupied-padding = 2
+label-occupied-padding = 4
 
 label-urgent = %index%!
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-urgent-padding = 4
 
 label-empty = %index%
 label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
+label-empty-padding = 4
 
 ; Separator in between workspaces
 ; label-separator = |
@@ -107,13 +107,13 @@ label-empty-padding = 2
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
-label-mode-padding = 2
+label-mode-padding = 4
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
-label-unfocused-padding = 2
+label-unfocused-padding = 4
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
