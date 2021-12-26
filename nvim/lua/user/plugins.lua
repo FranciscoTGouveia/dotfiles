@@ -45,7 +45,9 @@ packer.init {
 
 -- Install your plugins here
 return packer.startup(function(use)
-  
+	use "wbthomason/packer.nvim" -- Have packer (manager) itself
+	use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim
+	use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
 
 
 
