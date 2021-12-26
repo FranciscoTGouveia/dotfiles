@@ -48,8 +48,10 @@ return packer.startup(function(use)
 	use "wbthomason/packer.nvim" -- Have packer (manager) itself
 	use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim
 	use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
-
-
+	use "9mm/vim-closer" -- Closes brackets when needed and Enter is pressed
+	use {'tpope/vim-dispatch', opt = true, cmd = {'Dispatch', 'Make', 'Focus', 'Start'}}
+	use "lunarvim/colorschemes"
+	use "folke/tokyonight.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
