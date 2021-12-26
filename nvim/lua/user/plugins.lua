@@ -50,8 +50,14 @@ return packer.startup(function(use)
 	use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
 	use "9mm/vim-closer" -- Closes brackets when needed and Enter is pressed
 	use {'tpope/vim-dispatch', opt = true, cmd = {'Dispatch', 'Make', 'Focus', 'Start'}}
-	use "lunarvim/colorschemes"
 	use "folke/tokyonight.nvim"
+	use "hrsh7th/nvim-cmp" -- The completion plugin
+	use "hrsh7th/cmp-buffer" -- Buffer completions
+	use "hrsh7th/cmp-path" -- Path completions
+	use "hrsh7th/cmp-cmdline" -- Cmdline completions
+	use "saadparwaiz1/cmp_luasnip" -- Snippet completions
+	use "L3MON4D3/LuaSnip" --Snippet engine
+	use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
