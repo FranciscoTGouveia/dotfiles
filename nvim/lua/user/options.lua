@@ -44,4 +44,4 @@ set.backup = false -- Doesn't allow backup files to be created
 set.confirm = true -- Display a confirmation dialog when writing and quitting
 set.hidden = true -- Hide files in the background instead of closing them
 set.history = 1000 -- Set the undo limit to 1000
-set.timeoutlen = 100 -- Time to wait for a mapped sequence to complete
+set.timeoutlen = 500 -- Time to wait for a mapped sequence to complete
