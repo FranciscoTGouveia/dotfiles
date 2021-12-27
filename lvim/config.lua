@@ -147,14 +147,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 --   },
 -- }
 
--- Additional Plugins
--- lvim.plugins = {
---     {"folke/tokyonight.nvim"},
---     {
---       "folke/trouble.nvim",
---       cmd = "TroubleToggle",
---     },
--- }
+lvim.plugins = {{"folke/trouble.nvim", cmd = "TroubleToggle"}, {"andweeb/presence.nvim"}}
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.autocommands.custom_groups = {
