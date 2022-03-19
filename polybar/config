@@ -1,7 +1,7 @@
 [colors]
-background = #222
+background = #0d0b21
 background-alt = #444
-foreground = #dfdfdf
+foreground = #bac1de
 foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
