@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + @space
-	rofi -show run
+	rofi -show drun -show-icons
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -78,7 +78,7 @@ super + bracket{left,right}
 
 # focus the last node/desktop
 super + {grave,Tab}
-	rofi -show dmenu
+	rofi -show window
 
 # focus the older or newer node in the focus history
 super + {o,i}
