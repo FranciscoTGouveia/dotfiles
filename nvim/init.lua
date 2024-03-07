@@ -17,19 +17,18 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local plugins = {
-    { "rebelot/kanagawa.nvim", name = "kanagawa", priority = 1000 },
-    { "nvim-telescope/telescope.nvim", name = "telescope", tag = "0.1.5", dependencies = {"nvim-lua/plenary.nvim"} },
-    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" }
-}
+
 
 local opts = {}
 
-require("lazy").setup(plugins, opts)
+require("lazy").setup("plugins")
 
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>f", builtin.find_files, {})
 vim.keymap.set("n", "<leader>w", builtin.live_grep, {})
+
+vim.keymap.set("n", "<leader>d", ":Neotree<CR>", {})
+
 
 local config = require("nvim-treesitter.configs")
 config.setup({

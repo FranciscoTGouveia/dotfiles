@@ -1,7 +1,10 @@
 {
   "kanagawa": { "branch": "master", "commit": "bfa818c7bf6259152f1d89cf9fbfba3554c93695" },
   "lazy.nvim": { "branch": "main", "commit": "83493db50a434a4c5c648faf41e2ead80f96e478" },
+  "neo-tree.nvim": { "branch": "v3.x", "commit": "459c60317cc1d251f6eb3b6f010d015d5d24b806" },
+  "nui.nvim": { "branch": "main", "commit": "756c59f46057cd2d43619cd3a6d4e01b2aa60295" },
   "nvim-treesitter": { "branch": "master", "commit": "9775d5d7c724f81acdd441e7e9edefc4514e990b" },
+  "nvim-web-devicons": { "branch": "master", "commit": "4adea17610d140a99c313e3f79a9dc01825d59ae" },
   "plenary.nvim": { "branch": "master", "commit": "f7adfc4b3f4f91aab6caebf42b3682945fbc35be" },
   "telescope": { "branch": "master", "commit": "d90956833d7c27e73c621a61f20b29fdb7122709" }
 }
