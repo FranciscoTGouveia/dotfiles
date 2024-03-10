@@ -9,7 +9,16 @@ return {
         "williamboman/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = {"lua_ls","arduino_language_server","clangd", "marksman", "pyright", "sqlls", "tsserver"}
+                ensure_installed = {
+                    "lua_ls",
+                    "arduino_language_server",
+                    "clangd",
+                    "marksman",
+                    "pyright",
+                    "sqlls",
+                    "tsserver",
+                    "jdtls"
+                }
             })
         end
     },
@@ -20,9 +29,10 @@ return {
             lspconfig.lua_ls.setup({})
             lspconfig.pyright.setup({})
             lspconfig.clangd.setup({})
+            lspconfig.jdtls.setup({})
             vim.keymap.set("n", "<leader>d", vim.lsp.buf.hover, {})
-            vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
-            vim.keymap.set("n", "<leader>gD", vim.lsp.buf.declaration, {})
+            vim.keymap.set("n", "<leader>cd", vim.lsp.buf.definition, {})
+            vim.keymap.set("n", "<leader>cD", vim.lsp.buf.declaration, {})
             vim.keymap.set({"n","v"}, "<leader>ca", vim.lsp.buf.code_action, {})
             vim.keymap.set("n", "<leader>ci", vim.lsp.buf.implementation, {})
             vim.keymap.set("n", "<leader>cr", vim.lsp.buf.references, {})
