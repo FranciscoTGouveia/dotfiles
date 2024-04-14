@@ -67,6 +67,8 @@
         tree
 	neovim
 	git
+	alacritty
+	lazygit
      ];
   };
 
