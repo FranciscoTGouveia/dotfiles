@@ -69,6 +69,7 @@
 	git
 	alacritty
 	lazygit
+	waybar
      ];
   };
 
@@ -79,12 +80,12 @@
       wget
   ];
 	
-
+  nixpkgs.config.allowUnfree = true;
 
   ###### Hyprland ######
   programs.hyprland = {
     enable = true;
-    nvidiaPatches = true;
+    enableNvidiaPatches = true;
     xwayland.enable = true;
   };
   environment.sessionVariables = {
@@ -122,6 +123,19 @@
   # (/run/current-system/configuration.nix). This is useful in case you
   # accidentally delete configuration.nix.
   system.copySystemConfiguration = true;
+
+
+  # Sound settings
+  sound.enable = true;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
+  };
+
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
