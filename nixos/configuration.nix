@@ -48,10 +48,6 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
-  # Enable sound.
-  # sound.enable = true;
-  # hardware.pulseaudio.enable = true;
-
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
@@ -62,25 +58,40 @@
           "wheel" 
       	  "networkmanager"
       ]; 
-      packages = with pkgs; [
-       	firefox
-        tree
-	neovim
-	git
-	alacritty
-	lazygit
-	waybar
+      packages = [
+       	pkgs.firefox
+        pkgs.tree
+	pkgs.neovim
+	pkgs.git
+	pkgs.alacritty
+	pkgs.wezterm
+	pkgs.lazygit
+	pkgs.waybar
+	pkgs.obsidian
+	(pkgs.waybar.overrideAttrs (oldAttrs: {
+	    mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+          })
+        )
+	pkgs.mako
+	pkgs.libnotify
+	pkgs.swww
+	pkgs.rofi-wayland
+	pkgs.discord
      ];
   };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-      vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+      vim
       wget
   ];
 	
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-25.9.0"
+  ];
+
 
   ###### Hyprland ######
   programs.hyprland = {
@@ -92,10 +103,12 @@
     WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
   };
-  #hardware = {
-    #opengl.enable = true;
-    #nvidia.modsetting.enable = true;
-  #};
+  hardware = {
+    opengl.enable = true;
+    nvidia.modesetting.enable = true;
+  };
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
 
 
