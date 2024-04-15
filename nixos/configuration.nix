@@ -77,6 +77,7 @@
 	pkgs.swww
 	pkgs.rofi-wayland
 	pkgs.discord
+	pkgs.networkmanagerapplet
      ];
   };
 
