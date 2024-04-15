@@ -76,8 +76,13 @@
 	pkgs.libnotify
 	pkgs.swww
 	pkgs.rofi-wayland
+	pkgs.wofi
 	pkgs.discord
 	pkgs.networkmanagerapplet
+	pkgs.grim
+	pkgs.slurp
+	pkgs.wl-clipboard
+	pkgs.neofetch
      ];
   };
 
