@@ -98,6 +98,11 @@
     "electron-25.9.0"
   ];
 
+  ######   Fonts  ######
+  fonts.packages = with pkgs; [ 
+	jetbrains-mono
+	 nerdfonts
+  ];
 
   ###### Hyprland ######
   programs.hyprland = {
