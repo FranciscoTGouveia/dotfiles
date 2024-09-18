@@ -37,6 +37,9 @@
       LC_CTYPE="en_US.utf8"; # required by dmenu don't change this
     };
   };
+
+  # Enable the Flakes feature and the accompanying new nix command-line tool
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
  
 
   # Enable sound with pipewire.
@@ -88,6 +91,7 @@
       gnumake
       clang
       git
+      llvm_18
 
       # tools
       tldr
@@ -120,6 +124,7 @@
     # nix
     nixfmt
     nixpkgs-fmt
+    home-manager
    
     # dev
     python3
@@ -140,5 +145,5 @@
   services.openssh.enable = true;
 
   # Don't touch this
-  system.stateVersion = "23.05";
+  system.stateVersion = "24.05";
 }
