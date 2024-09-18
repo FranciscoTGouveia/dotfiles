@@ -13,4 +13,12 @@
     # Don't ever change this after the first build.  Don't ask questions.
     stateVersion = "23.11";
   };
+
+
+
+  programs.git = {
+    enable = true;
+    userName = "Francisco Tomé";
+    userEmail = "francisco.t.gouveia@tecnico.ulisboa.ru";
+  };
 }

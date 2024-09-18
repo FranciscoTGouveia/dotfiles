@@ -1,6 +1,6 @@
 # flake.nix
 {
-  description = "My Home Manager configuration";
+  description = "Francisco's Home Manager flake";
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-23.11";
