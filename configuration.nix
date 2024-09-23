@@ -92,7 +92,6 @@
       gcc
       gnumake
       clang
-      git
       llvm_18
       obsidian
 
@@ -104,6 +103,7 @@
       unzip
       file
       neofetch
+      dunst
 
       # cybersec
       traceroute
@@ -132,6 +132,7 @@
     vim
     wget
     curl
+    git
     
     # nix
     nixfmt
@@ -150,13 +151,16 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+  # Default editor
+  environment.variables.EDITOR = "vim";
+
   # Brightness
   programs.light.enable = true;
   services.actkbd = {
     enable = true;
     bindings = [
-      { keys = [ 115 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/light -A 10"; }
-      { keys = [ 114 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/light -U 10"; }
+      { keys = [ 224 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/light -U 10"; }
+      { keys = [ 225 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/light -A 10"; }
     ];
   };
 	
