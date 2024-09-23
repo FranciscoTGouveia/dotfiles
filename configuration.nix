@@ -3,24 +3,21 @@
 {
 
   imports = [
-    /etc/nixos/hardware-configuration.nix
+    ./hardware-configuration.nix
   ];
+
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking = {
-    firewall = {
-      enable = true;
-      allowedTCPPorts = [];
-      allowedUDPPorts = [];
-    };
-    hostName = "poseidon";
-    networkmanager.enable = true;
-  };
 
-  # edit as per your location and timezone
+  # Networking
+  networking.hostName = "poseidon";
+  networking.networkmanager.enable = true;
+
+
+  # Time zone
   time.timeZone = "Europe/Lisbon";
   i18n = {
     defaultLocale = "en_US.UTF-8";
@@ -34,25 +31,11 @@
       LC_PAPER = "pt_PT.UTF-8";
       LC_TELEPHONE = "pt_PT.UTF-8";
       LC_TIME = "pt_PT.UTF-8";
-      LC_CTYPE="en_US.utf8"; # required by dmenu don't change this
     };
   };
+	
 
-  # Enable the Flakes feature and the accompanying new nix command-line tool
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
- 
-
-  # Enable sound with pipewire.
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
-
+  # XServer
   services.xserver = {
     enable = true;
     layout = "pt";
@@ -63,6 +46,25 @@
 
   console.keyMap = "pt-latin1";
 
+  services.printing.enable = true;
+
+
+  # Sound
+  sound.enable = true;
+  hardware.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
+
+
+  # Enable the Flakes feature and the accompanying new nix command-line tool
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+
   nixpkgs.config = {
     allowUnfree = true;
     pulseaudio = true;
@@ -72,7 +74,7 @@
   users.users.francisco = {
     isNormalUser = true;
     description = "francisco";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "video" ];
     packages = with pkgs; [
       # web
       firefox
@@ -92,21 +94,31 @@
       clang
       git
       llvm_18
+      obsidian
 
       # tools
       tldr
       tmux
       ripgrep
+      htop
+      unzip
+      file
+      neofetch
 
       # cybersec
       traceroute
       openvpn
       nmap
       wireshark
+      nmap
+      john
+      binwalk
+      foremost
 
       # graphical
       alacritty
       dmenu
+      feh
       networkmanagerapplet
       
       # Need to add Stenography Tools
@@ -124,18 +136,12 @@
     # nix
     nixfmt
     nixpkgs-fmt
-    home-manager
    
     # dev
     python3
     dconf
     nodejs
   ];
-
-  programs = {
-    thunar.enable = true;
-    dconf.enable = true;
-  };
 
   hardware = {
     bluetooth.enable = true;
@@ -144,6 +150,17 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+  # Brightness
+  programs.light.enable = true;
+  services.actkbd = {
+    enable = true;
+    bindings = [
+      { keys = [ 115 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/light -A 10"; }
+      { keys = [ 114 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/light -U 10"; }
+    ];
+  };
+	
   # Don't touch this
   system.stateVersion = "24.05";
+
 }
