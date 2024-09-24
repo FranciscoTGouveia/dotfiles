@@ -106,6 +106,9 @@
       file
       neofetch
       dunst
+      nnn
+      fzf
+      btop
 
       # cybersec
       traceroute
@@ -121,6 +124,7 @@
       alacritty
       dmenu
       feh
+      i3lock-fancy-rapid
       networkmanagerapplet
       
       # Need to add Stenography Tools
