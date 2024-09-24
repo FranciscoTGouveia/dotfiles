@@ -124,7 +124,7 @@
       alacritty
       dmenu
       feh
-      i3lock-fancy-rapid
+      i3lock-fancy
       networkmanagerapplet
       
       # Need to add Stenography Tools

@@ -25,7 +25,12 @@
     enable = true;
     settings = {
       env.TERM = "xterm-256color";
-      font.size = 8;
+      window = {
+        opacity = 0.50;
+      };
+      font = {
+        size = 8;
+      };
       scrolling.multiplier = 5;
       selection.save_to_clipboard = true;
     };
@@ -65,8 +70,8 @@
         "${modifier}+Return" = "exec ${pkgs.alacritty}/bin/alacritty";
         "${modifier}+b" = "exec ${pkgs.brave}/bin/brave";
         "${modifier}+d" = "exec ${pkgs.dmenu}/bin/dmenu_run";
-        "${modifier}+x" = "exec ${pkgs.i3lock-fancy-rapid}/bin/i3lock-fancy-rapid";
-        "${modifier}+q" = "exec kill";
+        "${modifier}+x" = "exec ${pkgs.i3lock-fancy}/bin/i3lock-fancy";
+        "${modifier}+q" = "kill";
       };
 
       startup = [
@@ -74,6 +79,16 @@
 	  command = "${pkgs.feh}/bin/feh --bg-scale ${config.home.homeDirectory}/dotfiles/wallpaper.png";
 	  always = true;
 	  notification = false;
+        }
+	{
+	  command = "${pkgs.networkmanagerapplet}/bin/nm-applet}";
+	  always = true;
+	  notification = false;
+	}
+	{
+          command = "xset r rate 190 75";
+          always = true;
+          notification = false;
         }
       ];
     };
