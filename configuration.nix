@@ -109,6 +109,7 @@
       nnn
       fzf
       btop
+      bat
 
       # cybersec
       traceroute
@@ -158,7 +159,10 @@
   services.openssh.enable = true;
 
   # Default editor
-  environment.variables.EDITOR = "vim";
+  environment.variables = {
+    EDITOR = "vim";
+    DEV = "/home/francisco/dotfiles/dev-environments/";
+  };
 
   # Brightness
   programs.light.enable = true;
