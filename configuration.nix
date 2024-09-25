@@ -120,6 +120,8 @@
       john
       binwalk
       foremost
+      zsteg
+      exiftool
 
       # graphical
       alacritty
@@ -127,10 +129,6 @@
       feh
       i3lock-fancy
       networkmanagerapplet
-      
-      # Need to add Stenography Tools
-      # Need to add Stenography Tools
-      # Need to add Stenography Tools
     ];
   };
 

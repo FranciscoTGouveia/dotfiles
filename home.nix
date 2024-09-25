@@ -8,7 +8,7 @@
   # Git
   programs.git = {
     enable = true;
-    userName = "Francisco Gouveia";
+    userName = "FranciscoTGouveia";
     userEmail = "francisco.t.gouveia@tecnico.ulisboa.pt";
     extraConfig = {
       color.ui = true;
