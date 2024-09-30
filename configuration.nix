@@ -93,6 +93,7 @@
       lazygit
       go
       gcc
+      gdb
       gnumake
       clang
       obsidian
