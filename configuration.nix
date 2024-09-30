@@ -115,13 +115,6 @@
       traceroute
       openvpn
       nmap
-      wireshark
-      nmap
-      john
-      binwalk
-      foremost
-      zsteg
-      exiftool
 
       # graphical
       alacritty
@@ -160,6 +153,7 @@
   environment.variables = {
     EDITOR = "vim";
     DEV = "/home/francisco/dotfiles/dev-environments/";
+    NIXPKGS_ALLOW_UNFREE = "1";
   };
 
   # Brightness
