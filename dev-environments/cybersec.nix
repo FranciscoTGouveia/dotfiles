@@ -13,5 +13,9 @@ pkgs.mkShell {
     testdisk
     nmap
     wireshark
+
+    # Crypto
+    python312Packages.pycrypto
+    sage
   ];
 }
