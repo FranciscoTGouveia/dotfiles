@@ -77,7 +77,7 @@
   users.users.francisco = {
     isNormalUser = true;
     description = "francisco";
-    extraGroups = [ "networkmanager" "wheel" "video" ];
+    extraGroups = [ "networkmanager" "wheel" "video" "wireshark"];
     packages = with pkgs; [
       # web
       firefox
@@ -86,6 +86,7 @@
       # media
       discord
       spotify
+      zoom-us
       
       # dev
       vscode
