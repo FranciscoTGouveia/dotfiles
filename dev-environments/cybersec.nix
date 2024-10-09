@@ -11,8 +11,12 @@ pkgs.mkShell {
     volatility3
     sleuthkit
     testdisk
+
+    # Networking
     nmap
     wireshark
+    whois
+    bind
 
     # Crypto
     python312Packages.pycrypto
