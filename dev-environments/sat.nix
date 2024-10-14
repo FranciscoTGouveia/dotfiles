@@ -7,5 +7,6 @@ in
 pkgs.mkShell {
   buildInputs = with pythonPackages; [
     python-sat
+    z3-solver
   ];
 }
