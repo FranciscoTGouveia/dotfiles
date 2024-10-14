@@ -11,11 +11,13 @@ pkgs.mkShell {
     volatility3
     sleuthkit
     testdisk
+    sqlite
     nmap
     wireshark
 
     # Crypto
     python312Packages.pycrypto
     sage
+    openssl
   ];
 }
