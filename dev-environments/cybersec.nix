@@ -12,12 +12,15 @@ pkgs.mkShell {
     sleuthkit
     testdisk
     sqlite
-    nmap
-    wireshark
 
     # Crypto
     python312Packages.pycrypto
     sage
     openssl
+
+    # Networking
+    nmap
+    wireshark
+    dig
   ];
 }
