@@ -82,6 +82,7 @@
       # web
       firefox
       brave
+      tor-browser
       
       # media
       discord
