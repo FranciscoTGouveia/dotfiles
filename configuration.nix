@@ -113,6 +113,7 @@
       fzf
       btop
       bat
+      pavucontrol
 
       # cybersec
       traceroute
