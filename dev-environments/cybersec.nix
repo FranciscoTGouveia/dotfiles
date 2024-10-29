@@ -22,5 +22,6 @@ pkgs.mkShell {
     nmap
     wireshark
     dig
+    whois
   ];
 }
