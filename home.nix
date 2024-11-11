@@ -48,7 +48,8 @@
       urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
       ll = "ls -lh";
       hades = "ssh francisco@85.138.35.238";
-      soudn = "pavucontrol";
+      sound = "pavucontrol";
+      hellper = "python3 Hellper/main.py";
     };
   };
 
