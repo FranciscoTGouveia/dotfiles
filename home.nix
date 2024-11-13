@@ -49,7 +49,7 @@
       ll = "ls -lh";
       hades = "ssh francisco@85.138.35.238";
       sound = "pavucontrol";
-      hellper = "python3 Hellper/main.py";
+      hellper = "python3 ~/Hellper/main.py";
     };
   };
 
@@ -76,6 +76,7 @@
         "${modifier}+d" = "exec ${pkgs.dmenu}/bin/dmenu_run";
         "${modifier}+x" = "exec ${pkgs.i3lock-fancy}/bin/i3lock-fancy";
         "${modifier}+q" = "kill";
+	"${modifier}+p" = "exec ${pkgs.flameshot}/bin/flameshot gui";
       };
 
       startup = [

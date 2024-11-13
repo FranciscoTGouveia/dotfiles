@@ -126,6 +126,7 @@
       feh
       i3lock-fancy
       networkmanagerapplet
+      flameshot
     ];
   };
 
@@ -162,6 +163,8 @@
 
   # Brightness
   programs.light.enable = true;
+
+  # Key bindings
   services.actkbd = {
     enable = true;
     bindings = [
