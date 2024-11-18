@@ -172,7 +172,12 @@
       { keys = [ 225 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/light -A 10"; }
     ];
   };
-	
+
+  # Run unpackaged binaries.
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+  ];
+
   # Don't touch this
   system.stateVersion = "24.05";
 
