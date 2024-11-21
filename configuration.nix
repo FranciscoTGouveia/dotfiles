@@ -90,7 +90,6 @@
       zoom-us
       
       # dev
-      vscode
       neovim
       lazygit
       go
@@ -127,6 +126,9 @@
       i3lock-fancy
       networkmanagerapplet
       flameshot
+
+      # latex
+      texlive.combined.scheme-full
     ];
   };
 
@@ -160,6 +162,9 @@
     DEV = "/home/francisco/dotfiles/dev-environments/";
     NIXPKGS_ALLOW_UNFREE = "1";
   };
+
+  # Install fonts.
+  fonts.packages = with pkgs; [ nerdfonts ];
 
   # Brightness
   programs.light.enable = true;
