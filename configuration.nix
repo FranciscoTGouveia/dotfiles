@@ -98,6 +98,8 @@
       gnumake
       clang
       obsidian
+      maven
+      jdk22
 
       # tools
       tldr
@@ -126,6 +128,9 @@
       i3lock-fancy
       networkmanagerapplet
       flameshot
+
+      # python3
+      python312Packages.extras
 
       # latex
       texlive.combined.scheme-full
