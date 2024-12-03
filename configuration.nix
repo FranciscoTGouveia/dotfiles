@@ -91,6 +91,7 @@
       
       # dev
       neovim
+      helix
       lazygit
       go
       gcc
