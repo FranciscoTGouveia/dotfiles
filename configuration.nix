@@ -115,6 +115,8 @@
       btop
       bat
       pavucontrol
+      hexedit
+      valgrind
 
       # cybersec
       traceroute
