@@ -109,6 +109,7 @@
       htop
       unzip
       file
+      tree
       neofetch
       dunst
       nnn
