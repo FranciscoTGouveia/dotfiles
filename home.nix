@@ -29,7 +29,7 @@
         opacity = 0.50;
       };
       font = {
-        size = 8;
+        size = 7;
       };
       scrolling.multiplier = 5;
       selection.save_to_clipboard = true;
@@ -50,9 +50,21 @@
       hades = "ssh francisco@85.138.35.238";
       sound = "pavucontrol";
       hellper = "python3 ~/Hellper/main.py";
+      tmux = "tmux -T RGB";
     };
   };
 
+  # Tmux
+  programs.tmux = {
+    enable = true;
+    escapeTime = 0;
+    clock24 = true;
+    customPaneNavigationAndResize = true;
+    keyMode = "vi";
+    newSession = true;
+    mouse = true;
+    prefix = "C-spacC-space";
+  };
 
   # i3
   xsession.windowManager.i3 = {
