@@ -23,5 +23,8 @@ pkgs.mkShell {
     wireshark
     dig
     whois
+
+    # Software
+    python312Packages.esprima
   ];
 }
