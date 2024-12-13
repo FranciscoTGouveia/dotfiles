@@ -63,7 +63,6 @@
     keyMode = "vi";
     newSession = true;
     mouse = true;
-    prefix = "C-spacC-space";
   };
 
   # i3
