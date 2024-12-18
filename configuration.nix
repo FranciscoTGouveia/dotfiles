@@ -91,6 +91,7 @@
       
       # dev
       neovim
+      vscode-fhs
       helix
       lazygit
       go
