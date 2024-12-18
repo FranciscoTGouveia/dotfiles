@@ -104,6 +104,7 @@
       jdk22
 
       # tools
+      sshfs
       tldr
       tmux
       ripgrep
