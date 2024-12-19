@@ -102,6 +102,7 @@
       obsidian
       maven
       jdk22
+      rustup
 
       # tools
       sshfs
