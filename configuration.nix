@@ -124,6 +124,7 @@
       valgrind
       zip
       cmake
+      ninja
 
       # cybersec
       traceroute
