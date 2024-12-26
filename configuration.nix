@@ -122,6 +122,8 @@
       pavucontrol
       hexedit
       valgrind
+      zip
+      cmake
 
       # cybersec
       traceroute
