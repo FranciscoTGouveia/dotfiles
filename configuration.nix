@@ -99,6 +99,7 @@
       gdb
       gnumake
       clang
+      clang-tools
       obsidian
       maven
       jdk22
@@ -125,6 +126,9 @@
       zip
       cmake
       ninja
+      libclang
+      fmt
+
 
       # cybersec
       traceroute
