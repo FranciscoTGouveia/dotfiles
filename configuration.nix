@@ -142,6 +142,7 @@
       i3lock-fancy
       networkmanagerapplet
       flameshot
+      arandr
 
       # python3
       python312Packages.extras
