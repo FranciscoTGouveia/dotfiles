@@ -98,12 +98,12 @@
       gcc
       gdb
       gnumake
-      clang
-      clang-tools
       obsidian
       maven
       jdk22
+      clang
       rustup
+      ninja
 
       # tools
       sshfs
@@ -124,10 +124,6 @@
       hexedit
       valgrind
       zip
-      cmake
-      ninja
-      libclang
-      fmt
 
 
       # cybersec
@@ -167,6 +163,9 @@
     python3
     dconf
     nodejs
+    php
+    cmake
+    libclang
   ];
 
   hardware = {
