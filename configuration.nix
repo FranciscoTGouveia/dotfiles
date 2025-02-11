@@ -38,7 +38,8 @@
   # XServer
   services.xserver = {
     enable = true;
-    layout = "pt";
+    layout = "pt, ru";
+    xkbOptions = "grp:win_space_toggle";
     xkbVariant = "";
     displayManager.defaultSession = "none+i3";
     windowManager.i3 = { enable = true; };
@@ -101,7 +102,7 @@
       obsidian
       maven
       jdk22
-      clang
+      clang-tools
       rustup
       ninja
 
@@ -165,7 +166,7 @@
     nodejs
     php
     cmake
-    libclang
+    #libclang
   ];
 
   hardware = {
