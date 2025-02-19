@@ -123,6 +123,7 @@
       bat
       pavucontrol
       hexedit
+      graphviz
       valgrind
       zip
 
