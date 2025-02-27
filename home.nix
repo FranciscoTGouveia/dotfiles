@@ -33,6 +33,7 @@
       };
       scrolling.multiplier = 5;
       selection.save_to_clipboard = true;
+      shell.program = "${pkgs.zsh}/bin/zsh";
     };
   };
 
@@ -56,7 +57,7 @@
     };
     oh-my-zsh = {
         enable = true;
-        theme = "robbyrussell";
+        theme = "bira";
         plugins = [ "git" "sudo" "aliases" "rust" "python" "ssh" "tmux"];
       };
   };
