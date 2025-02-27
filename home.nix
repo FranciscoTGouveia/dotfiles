@@ -38,20 +38,27 @@
 
 
   # Bash
-  programs.bash = {
+  programs.zsh = {
     enable = true;
     enableCompletion = true;
+    enableAutosuggestions = true;
+    autocd = true;
     shellAliases = {
       lg = "lazygit";
       nv = "nvim";
-      urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";
-      urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
       ll = "ls -lh";
       hades = "ssh francisco@85.138.35.238";
       sound = "pavucontrol";
-      hellper = "python3 ~/Hellper/main.py";
       tmux = "tmux -T RGB";
+      ":q" = "exit";
+      aquila-start = "sshfs ftg@aquila.inesc-id.pt:/home/ftg/z3 ~/z3";
+      aquila-end = "fusermount -u ~/z3";
     };
+    oh-my-zsh = {
+        enable = true;
+        theme = "robbyrussell";
+        plugins = [ "git" "sudo" "aliases" "rust" "python" "ssh" "tmux"];
+      };
   };
 
   # Tmux
@@ -92,16 +99,16 @@
 
       startup = [
         {
-	  command = "${pkgs.feh}/bin/feh --bg-scale ${config.home.homeDirectory}/dotfiles/wallpaper.png";
-	  always = true;
-	  notification = false;
+	        command = "${pkgs.feh}/bin/feh --bg-scale ${config.home.homeDirectory}/dotfiles/wallpaper.png";
+          always = true;
+          notification = false;
         }
-	{
-	  command = "${pkgs.networkmanagerapplet}/bin/nm-applet}";
-	  always = true;
-	  notification = false;
-	}
-	{
+        {
+          command = "${pkgs.networkmanagerapplet}/bin/nm-applet}";
+          always = true;
+          notification = false;
+        }
+        {
           command = "xset r rate 190 75";
           always = true;
           notification = false;
