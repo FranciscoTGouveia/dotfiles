@@ -140,6 +140,7 @@
       networkmanagerapplet
       flameshot
       arandr
+      picom
 
       # python3
       python312Packages.extras

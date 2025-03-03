@@ -26,7 +26,7 @@
     settings = {
       env.TERM = "xterm-256color";
       window = {
-        opacity = 0.50;
+        opacity = 0.5;
       };
       font = {
         size = 7;
@@ -80,7 +80,7 @@
       modifier = "Mod4";
 
       window = {
-        border = 2;
+        border = 0;
         titlebar = false;
       };
 
@@ -236,6 +236,30 @@
     };
   };
 
+  # Picom
+  services.picom = {
+    enable = true;
+    vSync = true;
+
+    settings = {
+      backend = "glx";
+      blur = {
+        method = "guassian";
+        size = 20;
+        deviation = 5.0;
+      };
+      corner-radius = 15;  # Change this for more or less rounding
+      round-borders = 1;
+      shadow = true;
+      shadow-radius = 10;
+      shadow-opacity = 0.2; # Transparency of shadows
+      blur-background = true;
+      blur-background-frame = true;
+      blur-background-fixed = true;
+      blur-strength = 5;
+      experimental-backends = true;
+    };
+  };
   
   home.stateVersion = "24.05";
   # Let home-manager install and manage itself.
