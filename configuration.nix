@@ -38,8 +38,7 @@
   # XServer
   services.xserver = {
     enable = true;
-    layout = "pt, ru";
-    xkbOptions = "grp:win_space_toggle";
+    layout = "pt";
     xkbVariant = "";
     displayManager.defaultSession = "none+i3";
     windowManager.i3 = { enable = true; };
@@ -135,7 +134,7 @@
 
       # graphical
       alacritty
-      dmenu
+      rofi
       feh
       i3lock-fancy
       networkmanagerapplet
