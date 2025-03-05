@@ -85,8 +85,8 @@
       };
 
       gaps = {
-        inner = 3;
-        outer = 8;
+        inner = 8;
+        outer = 5;
       };
 
       bars = [];
