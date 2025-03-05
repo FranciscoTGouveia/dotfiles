@@ -125,12 +125,13 @@
       graphviz
       valgrind
       zip
-
+      zathura
 
       # cybersec
       traceroute
       openvpn
       nmap
+      openssl
 
       # graphical
       alacritty
