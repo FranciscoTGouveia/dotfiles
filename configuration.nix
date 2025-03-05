@@ -141,6 +141,7 @@
       flameshot
       arandr
       picom
+      polybar
 
       # python3
       python312Packages.extras
