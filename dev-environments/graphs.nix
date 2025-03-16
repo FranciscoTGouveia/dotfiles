@@ -9,6 +9,8 @@ pkgs.mkShell {
     numpy
     networkx
     matplotlib
+    pandas
+    plotly
     scipy
   ];
 }
