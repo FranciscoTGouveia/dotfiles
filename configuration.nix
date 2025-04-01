@@ -95,14 +95,13 @@
       helix
       lazygit
       go
-      gcc
       gdb
       gnumake
       obsidian
       maven
       jdk22
       clang-tools
-      rustup
+      lld
       ninja
 
       # tools
@@ -124,6 +123,7 @@
       hexedit
       graphviz
       valgrind
+      tui-journal
       zip
       zathura
 
@@ -143,9 +143,6 @@
       arandr
       picom
       polybar
-
-      # python3
-      python312Packages.extras
 
       # latex
       texlive.combined.scheme-full
@@ -168,8 +165,14 @@
     dconf
     nodejs
     php
+    gcc
+    rustc
+    cargo
     cmake
-    #libclang
+    gnumake
+    pkg-config
+    binutils
+    libclang
   ];
 
   hardware = {
@@ -184,6 +187,7 @@
     EDITOR = "vim";
     DEV = "/home/francisco/dotfiles/dev-environments/";
     NIXPKGS_ALLOW_UNFREE = "1";
+    RUSTFLAGS = "-C linker=${pkgs.gcc}/bin/gcc";
   };
 
   # Install fonts.
@@ -204,6 +208,9 @@
   # Run unpackaged binaries.
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
+    stdenv.cc.cc.lib
+    zlib
+    glib
   ];
 
   # Don't touch this
