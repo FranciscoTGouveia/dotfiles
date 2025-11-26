@@ -1,0 +1,25 @@
+theme = "kanagawa-dragon"
+
+[editor]
+cursorline = true
+true-color = true
+line-number = "relative"
+color-modes = true
+auto-format = false
+scroll-lines = 5
+popup-border = "all"
+auto-info	= false
+mouse = true
+clipboard-provider = "pasteboard"
+bufferline = "multiple"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[keys.normal]
+# (Opinionated) Keybindings
+C-w = ":buffer-close"
+C-tab = ":buffer-next"
+C-S-tab = ":buffer-previous"
