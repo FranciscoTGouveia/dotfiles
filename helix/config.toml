@@ -13,6 +13,10 @@ mouse = true
 clipboard-provider = "pasteboard"
 bufferline = "multiple"
 
+[editor.soft-wrap]
+enable = true
+wrap-at-text-width = false
+
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
