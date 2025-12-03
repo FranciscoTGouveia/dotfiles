@@ -136,6 +136,11 @@ export PATH="$PATH:$HOME/.dotnet/tools"
 alias zap=nchat
 
 alias nv=nvim
+alias h=hx
+alias fd=fdfind
+
+# Make it fasterrr
+xset r rate 190 75
 
 # BEGIN opam configuration
 # This is useful if you're using opam as it adds:
