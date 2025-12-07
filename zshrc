@@ -138,6 +138,8 @@ alias zap=nchat
 alias nv=nvim
 alias h=hx
 alias fd=fdfind
+alias tm=tmux
+alias bat=batcat
 
 # Make it fasterrr
 xset r rate 190 75
