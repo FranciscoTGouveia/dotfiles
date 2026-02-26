@@ -140,6 +140,7 @@ alias h=hx
 alias fd=fdfind
 alias tm=tmux
 alias bat=batcat
+alias m=aerc
 
 # Make it fasterrr
 xset r rate 190 75
