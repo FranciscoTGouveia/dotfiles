@@ -78,10 +78,6 @@ vim.cmd("colorscheme kanagawa-dragon")
 -- ============================
 --  Treesitter
 -- ============================
-require("nvim-treesitter.configs").setup({
-  ensure_installed = { "rust", "lua", "vim", "vimdoc", "json" },
-  highlight = { enable = true },
-})
 
 -- ============================
 --  LSP: Rust Analyzer
