@@ -14,7 +14,7 @@ vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true -- use spaces instead of tabs for identation
-
+vim.opt.colorcolumn = "80"
 
 
 -- =====================
@@ -74,6 +74,29 @@ require("lazy").setup({
 --  Colorscheme
 -- =============
 vim.cmd("colorscheme kanagawa-dragon")
+vim.o.background = "dark"
+local is_dark = true
+local function setup_lualine(theme)
+  require('lualine').setup({
+    options = {
+      theme = theme,
+      icons_enabled = true
+    }
+  })
+end
+local function toggle_theme()
+  if is_dark then
+    vim.o.background = "light"
+    vim.cmd("colorscheme kanagawa-lotus")
+    setup_lualine("Tomorrow")
+    is_dark = false
+  else
+    vim.o.background = "dark"
+    vim.cmd("colorscheme kanagawa-dragon")
+    setup_lualine("tomorrow_night")
+    is_dark = true
+  end
+end
 
 -- ============================
 --  Treesitter
@@ -138,7 +161,8 @@ end)
 -- ============================
 --  Quality of Life Keymaps
 -- ============================
-vim.keymap.set("n", "<leader>w", "<cmd>w<cr>")     -- Save
-vim.keymap.set("n", "<leader>q", "<cmd>q<cr>")     -- Quit
-vim.keymap.set("n", "<leader>e", "<cmd>Ex<cr>")    -- File explorer
-
+vim.keymap.set("n", "<leader>w", "<cmd>w<cr>")    -- Save
+vim.keymap.set("n", "<leader>q", "<cmd>q<cr>")    -- Quit
+vim.keymap.set("n", "<leader>e", "<cmd>Ex<cr>")   -- File explorer
+vim.keymap.set("n", "<leader>tt", toggle_theme,
+  { desc = "Toggle theme" })                      -- Switch between  themes
