@@ -99,11 +99,12 @@ require("gitsigns").setup()
 -- ============================
 --  Keybindings
 -- ============================
-vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
-vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>")
-vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
-vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
-vim.keymap.set("n", "<leader>w", "<cmd>w<cr>")
-vim.keymap.set("n", "<leader>q", "<cmd>q<cr>")
-vim.keymap.set("n", "<leader>e", "<cmd>Ex<cr>")
-vim.keymap.set("n", "<leader>tt", toggle_theme, { desc = "Toggle theme" })
+local map = vim.keymap.set
+map("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
+map("n", "<leader>fg", "<cmd>Telescope live_grep<cr>")
+map("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
+map("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
+map("n", "<leader>w", "<cmd>w<cr>")
+map("n", "<leader>q", "<cmd>q<cr>")
+map("n", "<leader>e", "<cmd>Ex<cr>")
+map("n", "<leader>tt", toggle_theme, { desc = "Toggle theme" })
