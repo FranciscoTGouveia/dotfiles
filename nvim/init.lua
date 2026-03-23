@@ -34,11 +34,7 @@ vim.opt.rtp:prepend(lazypath)
 --  Plugins
 -- ============================
 require("lazy").setup({
-  -- LSP support
   { "neovim/nvim-lspconfig" },
-  -- Rust support
-  { "simrat39/rust-tools.nvim" },
-  -- Autocompletion and LSP plugins
   {'hrsh7th/nvim-cmp'},  -- Autocompletion plugin
   {'hrsh7th/cmp-buffer'},  -- Buffer source for nvim-cmp
   {'hrsh7th/cmp-path'},  -- LSP source for nvim-cmp
@@ -51,13 +47,8 @@ require("lazy").setup({
   { "stevearc/conform.nvim" },
   -- Telescope
   { "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
-  -- Git signs
   { "lewis6991/gitsigns.nvim" },
-  -- Lazygit floating window integration
-  { "kdheepak/lazygit.nvim" },
-  -- Colorscheme
   { "rebelot/kanagawa.nvim" },
-  -- Status line
   {'nvim-lualine/lualine.nvim',
       dependencies = { 'nvim-tree/nvim-web-devicons' },
       config = function()
@@ -98,45 +89,7 @@ local function toggle_theme()
   end
 end
 
--- ============================
---  Treesitter
--- ============================
 
--- ============================
---  LSP: Rust Analyzer
--- ============================
-local lspconfig = require("lspconfig")
-local rust_tools = require("rust-tools")
-
-rust_tools.setup({
-  server = {
-    on_attach = function(_, bufnr)
-      -- Keybinds for LSP
-      local opts = { buffer = bufnr }
-      vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-      vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-      vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-      vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-    end,
-    settings = {
-      ["rust-analyzer"] = {
-        cargo = { allFeatures = true },
-        checkOnSave = { command = "clippy" },
-      },
-    },
-  }
-})
-
--- ============================
---  Auto-format on save
---  (rustfmt automatically)
--- ============================
-require("conform").setup({
-  formatters_by_ft = {
-    rust = { "rustfmt" },
-  },
-  format_on_save = { timeout_ms = 500 },
-})
 
 -- ============================
 --  Gitsigns
@@ -144,25 +97,13 @@ require("conform").setup({
 require("gitsigns").setup()
 
 -- ============================
---  Telescope keybinds
+--  Keybindings
 -- ============================
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
 vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>")
 vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
 vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
-
--- ============================
---  Lazygit keybind
--- ============================
-vim.keymap.set("n", "<leader>lg", function()
-  vim.cmd("LazyGit")
-end)
-
--- ============================
---  Quality of Life Keymaps
--- ============================
-vim.keymap.set("n", "<leader>w", "<cmd>w<cr>")    -- Save
-vim.keymap.set("n", "<leader>q", "<cmd>q<cr>")    -- Quit
-vim.keymap.set("n", "<leader>e", "<cmd>Ex<cr>")   -- File explorer
-vim.keymap.set("n", "<leader>tt", toggle_theme,
-  { desc = "Toggle theme" })                      -- Switch between  themes
+vim.keymap.set("n", "<leader>w", "<cmd>w<cr>")
+vim.keymap.set("n", "<leader>q", "<cmd>q<cr>")
+vim.keymap.set("n", "<leader>e", "<cmd>Ex<cr>")
+vim.keymap.set("n", "<leader>tt", toggle_theme, { desc = "Toggle theme" })
