@@ -14,7 +14,6 @@ vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true -- use spaces instead of tabs for identation
-vim.opt.colorcolumn = "80"
 
 
 -- =====================
@@ -41,14 +40,15 @@ require("lazy").setup({
   {'hrsh7th/cmp-nvim-lsp'},  -- LSP source for nvim-cmp
   {'neovim/nvim-lspconfig'},  -- LSP configuration
   {'onsails/lspkind.nvim'}, -- Adds icons to nvim-cmp
-  -- Treesitter
   {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'},
-  -- Formatting
   { "stevearc/conform.nvim" },
-  -- Telescope
   { "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
   { "lewis6991/gitsigns.nvim" },
   { "rebelot/kanagawa.nvim" },
+  { "folke/which-key.nvim", config = function() 
+    require("which-key").setup({}) 
+    end
+  },
   {'nvim-lualine/lualine.nvim',
       dependencies = { 'nvim-tree/nvim-web-devicons' },
       config = function()
@@ -103,8 +103,19 @@ local map = vim.keymap.set
 map("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
 map("n", "<leader>fg", "<cmd>Telescope live_grep<cr>")
 map("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
-map("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
 map("n", "<leader>w", "<cmd>w<cr>")
 map("n", "<leader>q", "<cmd>q<cr>")
 map("n", "<leader>e", "<cmd>Ex<cr>")
-map("n", "<leader>tt", toggle_theme, { desc = "Toggle theme" })
+map("n", "<leader>tt", toggle_theme)
+
+local wk = require("which-key")
+wk.register({
+  f = {
+    name = "Find",
+    f = "Find Files",
+    g = "Find Word",
+    b = "Find Buffer"
+  },
+  w = "Save File",
+  q = "Quit",
+}, { prefix = "<leader>" })
