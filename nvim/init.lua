@@ -45,6 +45,13 @@ require("lazy").setup({
   { "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
   { "lewis6991/gitsigns.nvim" },
   { "rebelot/kanagawa.nvim" },
+  { "nvim-neo-tree/neo-tree.nvim", branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons",
+      "MunifTanjim/nui.nvim",
+    },
+  },
   { "folke/which-key.nvim", config = function() 
     require("which-key").setup({}) 
     end
@@ -97,6 +104,21 @@ end
 require("gitsigns").setup()
 
 -- ============================
+--  File Explorer
+-- ============================
+require("neo-tree").setup({
+  filesystem = {
+    follow_current_file = { enabled = true, },
+    hijack_netrw_behavior = "open_default",
+  },
+  window = { position = "right", width = 30, },
+  close_if_last_window = true,
+  popup_border_style = "rounded",
+  enable_git_status = true,
+  enable_diagnostics = true,
+})
+
+-- ============================
 --  Keybindings
 -- ============================
 local wk = require("which-key")
@@ -105,7 +127,11 @@ wk.add({
   { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
   { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Find Word" },
   { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Find Buffers" },
+  { "<leader>e", group = "Explorer" },
+  { "<leader>ee", "<cmd>Neotree focus<cr>", desc = "Open File Explorer" },
+  { "<leader>ec", "<cmd>Neotree close<cr>", desc = "Close File Explorer" },
+  { "<leader>eb", "<cmd>Neotree buffers<cr>", desc = "Open Buffer Explorer" },
   { "<leader>t", toggle_theme, desc = "Toggle Theme" },
   { "<leader>w", "<cmd>w<cr>", desc = "Save" },
-  { "<leader>q", "<cmd>w<cr>", desc = "Exit" },
+  { "<leader>q", "<cmd>q<cr>", desc = "Exit" },
 })
