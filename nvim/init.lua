@@ -99,23 +99,13 @@ require("gitsigns").setup()
 -- ============================
 --  Keybindings
 -- ============================
-local map = vim.keymap.set
-map("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
-map("n", "<leader>fg", "<cmd>Telescope live_grep<cr>")
-map("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
-map("n", "<leader>w", "<cmd>w<cr>")
-map("n", "<leader>q", "<cmd>q<cr>")
-map("n", "<leader>e", "<cmd>Ex<cr>")
-map("n", "<leader>tt", toggle_theme)
-
 local wk = require("which-key")
-wk.register({
-  f = {
-    name = "Find",
-    f = "Find Files",
-    g = "Find Word",
-    b = "Find Buffer"
-  },
-  w = "Save File",
-  q = "Quit",
-}, { prefix = "<leader>" })
+wk.add({
+  { "<leader>f", group = "Find" },
+  { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
+  { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Find Word" },
+  { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Find Buffers" },
+  { "<leader>t", toggle_theme, desc = "Toggle Theme" },
+  { "<leader>w", "<cmd>w<cr>", desc = "Save" },
+  { "<leader>q", "<cmd>w<cr>", desc = "Exit" },
+})
