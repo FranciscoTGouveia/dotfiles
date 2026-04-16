@@ -66,11 +66,6 @@ bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 # screenshots
 bindsym Print exec --no-startup-id flameshot gui
 
-# polybar
-exec --no-startup-id ~/.config/polybar/launch.sh
-bindsym $mod+p exec "~/.config/polybar/launch.sh"
-
-
 # kill focused window
 bindsym $mod+q kill
 
