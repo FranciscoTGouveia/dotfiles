@@ -52,8 +52,23 @@ require("lazy").setup({
       "MunifTanjim/nui.nvim",
     },
   },
-  { "folke/which-key.nvim", config = function() 
-    require("which-key").setup({}) 
+  { "folke/which-key.nvim", config = function()
+    require("which-key").setup({})
+    end
+  },
+  { "akinsho/bufferline.nvim", version = "*", dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("bufferline").setup({
+        options = {
+          mode = "buffers",
+          diagnostics = "nvim_lsp",
+          offsets = {
+            { filetype = "neo-tree", text = "File Explorer", separator = true }
+          },
+          show_buffer_close_icons = false,
+          show_close_icon = false,
+        }
+      })
     end
   },
   {'nvim-lualine/lualine.nvim',
@@ -126,7 +141,10 @@ wk.add({
   { "<leader>f", group = "Find" },
   { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
   { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Find Word" },
-  { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Find Buffers" },
+  { "<leader>b", group = "Buffers" },
+  { "<leader>bd", "<cmd>bdelete<cr>", desc = "Close Buffer" },
+  { "<C-Tab>", "<cmd>BufferLineCycleNext<cr>", desc = "Next Buffer" },
+  { "<C-S-Tab>", "<cmd>BufferLineCyclePrev<cr>", desc = "Prev Buffer" },
   { "<leader>e", group = "Explorer" },
   { "<leader>ee", "<cmd>Neotree focus<cr>", desc = "Open File Explorer" },
   { "<leader>ec", "<cmd>Neotree close<cr>", desc = "Close File Explorer" },
