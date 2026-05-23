@@ -28,6 +28,8 @@ wk.add({
   { "<leader>bd",  "<cmd>bdelete<cr>",              desc = "Close Buffer" },
   { "<C-Tab>",     "<cmd>BufferLineCycleNext<cr>",  desc = "Next Buffer" },
   { "<C-S-Tab>",   "<cmd>BufferLineCyclePrev<cr>",  desc = "Prev Buffer" },
+  { "]t",          "<cmd>BufferLineCycleNext<cr>",  desc = "Next Buffer" },
+  { "[t",          "<cmd>BufferLineCyclePrev<cr>",  desc = "Prev Buffer" },
   { "<leader>e",   group = "Explorer" },
   { "<leader>ee",  "<cmd>Neotree focus<cr>",        desc = "Open File Explorer" },
   { "<leader>ec",  "<cmd>Neotree close<cr>",        desc = "Close File Explorer" },
@@ -35,6 +37,16 @@ wk.add({
   { "<leader>t",   toggle_theme,                    desc = "Toggle Theme" },
   { "<leader>w",   "<cmd>w<cr>",                    desc = "Save" },
   { "<leader>q",   "<cmd>q<cr>",                    desc = "Exit" },
+  { "<leader>h",   group = "Hunks" },
+  { "<leader>hr",  function() require("gitsigns").reset_hunk() end,       desc = "Reset Hunk" },
+  { "<leader>hs",  function() require("gitsigns").stage_hunk() end,       desc = "Stage Hunk" },
+  { "<leader>hu",  function() require("gitsigns").undo_stage_hunk() end,  desc = "Undo Stage Hunk" },
+  { "<leader>hd",  function() require("gitsigns").diffthis() end,         desc = "Diff File" },
+  { "]h",          function() require("gitsigns").next_hunk() end,         desc = "Next Hunk" },
+  { "[h",          function() require("gitsigns").prev_hunk() end,         desc = "Prev Hunk" },
+  -- Visual mode: operate only on selected lines
+  { "<leader>hr",  function() require("gitsigns").reset_hunk({ vim.fn.line("."), vim.fn.line("v") }) end, desc = "Reset Hunk", mode = "v" },
+  { "<leader>hs",  function() require("gitsigns").stage_hunk({ vim.fn.line("."), vim.fn.line("v") }) end, desc = "Stage Hunk",  mode = "v" },
 })
 
 -- LSP keybindings: attached per buffer whenever an LSP connects
