@@ -42,6 +42,8 @@ wk.add({
   { "<leader>hs",  function() require("gitsigns").stage_hunk() end,       desc = "Stage Hunk" },
   { "<leader>hu",  function() require("gitsigns").undo_stage_hunk() end,  desc = "Undo Stage Hunk" },
   { "<leader>hd",  function() require("gitsigns").diffthis() end,         desc = "Diff File" },
+  { "<leader>hb",  function() require("gitsigns").blame_line() end,       desc = "Blame Line" },
+  { "<leader>hB",  function() require("gitsigns").blame() end,            desc = "Blame File" },
   { "]h",          function() require("gitsigns").next_hunk() end,         desc = "Next Hunk" },
   { "[h",          function() require("gitsigns").prev_hunk() end,         desc = "Prev Hunk" },
   -- Visual mode: operate only on selected lines
