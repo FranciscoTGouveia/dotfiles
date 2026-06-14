@@ -6,6 +6,11 @@ return {
     end,
   },
 
+  { "maxmx03/solarized.nvim",
+    lazy = true,
+    opts = { theme = "solarized", variant = "spring" },
+  },
+
   { "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()

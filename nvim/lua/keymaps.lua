@@ -9,8 +9,8 @@ end
 local function toggle_theme()
   if is_dark then
     vim.o.background = "light"
-    vim.cmd("colorscheme kanagawa-lotus")
-    setup_lualine("Tomorrow")
+    vim.cmd("colorscheme solarized")
+    setup_lualine("solarized_light")
     is_dark = false
   else
     vim.o.background = "dark"
