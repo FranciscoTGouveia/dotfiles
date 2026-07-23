@@ -51,6 +51,25 @@ wk.add({
   { "<leader>hs",  function() require("gitsigns").stage_hunk({ vim.fn.line("."), vim.fn.line("v") }) end, desc = "Stage Hunk",  mode = "v" },
 })
 
+-- Coq keybindings: attached per buffer whenever a Coq/Rocq file opens
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "coq",
+  callback = function(args)
+    local buf = args.buf
+    wk.add({
+      { "<leader>c",   group = "Coq",                buffer = buf },
+      { "<leader>cc",  "<cmd>CoqStart<cr>",          desc = "Start Coqtail",   buffer = buf },
+      { "<leader>cq",  "<cmd>CoqStop<cr>",           desc = "Stop Coqtail",    buffer = buf },
+      { "<leader>cj",  "<cmd>CoqNext<cr>",           desc = "Step Forward",    buffer = buf },
+      { "<leader>ck",  "<cmd>CoqUndo<cr>",           desc = "Step Back",       buffer = buf },
+      { "<leader>cl",  "<cmd>CoqToLine<cr>",         desc = "Check to Cursor", buffer = buf },
+      { "<leader>cT",  "<cmd>CoqToTop<cr>",          desc = "Check Buffer",    buffer = buf },
+      { "<leader>cG",  "<cmd>CoqJumpToEnd<cr>",      desc = "Jump to End",     buffer = buf },
+      { "<leader>cg",  "<cmd>CoqGotoDef<cr>",        desc = "Go to Definition", buffer = buf },
+    })
+  end,
+})
+
 -- LSP keybindings: attached per buffer whenever an LSP connects
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)

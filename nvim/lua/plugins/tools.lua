@@ -20,4 +20,8 @@ return {
   { "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
   },
+
+  { "whonore/Coqtail",
+    ft = "coq",
+  },
 }
