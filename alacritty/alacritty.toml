@@ -1,6 +1,15 @@
+
 [font]
 size = 9
 
 [font.normal]
 family = "DejaVu Sans Mono"
 style = "Book"
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\u001B\r"
+
+[general]
+import = ["~/.config/alacritty/active-theme.toml"]
