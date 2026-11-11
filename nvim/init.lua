@@ -20,3 +20,4 @@ require("lazy").setup({
   ui = { border = "rounded" },
 })
 require("keymaps")
+require("unicode_input").setup({ "coq" })  -- \forall<Space> -> ∀

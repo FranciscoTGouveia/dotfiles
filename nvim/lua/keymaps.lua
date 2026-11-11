@@ -27,7 +27,9 @@ wk.add({
   { "<leader>b",   group = "Buffers" },
   { "<leader>bd",  "<cmd>bdelete<cr>",              desc = "Close Buffer" },
   { "<C-Tab>",     "<cmd>BufferLineCycleNext<cr>",  desc = "Next Buffer" },
+  { "<leader>bl",     "<cmd>BufferLineCycleNext<cr>",  desc = "Next Buffer" },
   { "<C-S-Tab>",   "<cmd>BufferLineCyclePrev<cr>",  desc = "Prev Buffer" },
+  { "<leader>bh",   "<cmd>BufferLineCyclePrev<cr>",  desc = "Prev Buffer" },
   { "]t",          "<cmd>BufferLineCycleNext<cr>",  desc = "Next Buffer" },
   { "[t",          "<cmd>BufferLineCyclePrev<cr>",  desc = "Prev Buffer" },
   { "<leader>e",   group = "Explorer" },
@@ -85,5 +87,13 @@ vim.api.nvim_create_autocmd("LspAttach", {
       { "[d",          "<cmd>lua vim.diagnostic.goto_prev()<cr>",    desc = "Prev Diagnostic",      buffer = buf },
       { "]d",          "<cmd>lua vim.diagnostic.goto_next()<cr>",    desc = "Next Diagnostic",      buffer = buf },
     })
+
+    -- clangd-only extras
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if client and client.name == "clangd" then
+      wk.add({
+        { "<leader>ch", "<cmd>LspClangdSwitchSourceHeader<cr>", desc = "Switch Source/Header", buffer = buf },
+      })
+    end
   end,
 })
